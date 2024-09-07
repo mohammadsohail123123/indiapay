@@ -36,7 +36,6 @@ public class UserController {
         if (existingUser.isPresent()) {
             throw new BadRequestException("User with same email already exist");
         }
-
         User newUser = userRepository.save(userEntity);
         return ResponseEntity.ok(newUser);
     }
